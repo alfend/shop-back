@@ -12,16 +12,16 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return ProductResource::collection(Products::all());
+        return Products::all();//ProductResource::collection(Products::all());
     }
 
     public function show($id)
     {
-        return new ProductResource(Products::findOrFail($id));
+        return Products::findOrFail($id); //new ProductResource()
     }
 
     public function byCategory($id)
     {
-        return ProductResource::collection(Products::where('category_id', $id)->get());
+        return Products::where('category_id', $id)->get(); //ProductResource::collection(
     }
 }

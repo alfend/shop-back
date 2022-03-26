@@ -63,7 +63,6 @@ class Products extends Model
         }
     }
 
-
     public function getImagePathAttribute()
     {
         return Storage::disk('public')->url($this->image);
