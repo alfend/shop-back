@@ -18,6 +18,10 @@ class ProductController extends Controller
     public function show($id)
     {
         return new ProductResource(Products::findOrFail($id));
-            //Products::where('slug', $id) ? Product::where('slug', $id) : Product::where('id', $id));
+    }
+
+    public function byCategory($id)
+    {
+        return ProductResource::collection(Products::where('category_id', $id)->get());
     }
 }
