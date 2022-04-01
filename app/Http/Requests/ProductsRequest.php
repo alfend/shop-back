@@ -30,6 +30,7 @@ class ProductsRequest extends FormRequest
             'title' => ['required', 'string'],
             'slug' => ['string', 'nullable'],
             'description' => ['string', 'nullable'],
+            'short_description' => ['string', 'nullable'],
             'image' => ['string', 'nullable'],
             'price' => ['numeric', 'required'],
             'old_price' => ['numeric', 'nullable'],
