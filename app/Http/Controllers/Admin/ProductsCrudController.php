@@ -63,6 +63,10 @@ class ProductsCrudController extends CrudController
                     'label' => 'Отображаемое название',
                 ],
                 [
+                    'name' => 'short_description',
+                    'label' => 'Краткое описание',
+                ],
+                [
                     'name' => 'description',
                     'label' => 'Описание',
                 ],
@@ -122,6 +126,10 @@ class ProductsCrudController extends CrudController
                 [
                     'name' => 'description',
                     'label' => 'Описание',
+                ],
+                [
+                    'name' => 'short_description',
+                    'label' => 'Краткое описание',
                 ],
                 [
                     'name' => 'type',
