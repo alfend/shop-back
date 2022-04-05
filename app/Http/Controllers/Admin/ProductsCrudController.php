@@ -31,7 +31,6 @@ class ProductsCrudController extends CrudController
         CRUD::setEntityNameStrings('продукт', 'продукты');
     }
 
-
     protected function setupListOperation()
     {
         $this->crud->setColumns(
@@ -175,12 +174,6 @@ class ProductsCrudController extends CrudController
         );
     }
 
-    /**
-     * Define what happens when the Update operation is loaded.
-     * 
-     * @see https://backpackforlaravel.com/docs/crud-operation-update
-     * @return void
-     */
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
