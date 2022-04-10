@@ -22,6 +22,6 @@ class ProductController extends Controller
 
     public function byCategory($id)
     {
-        return Products::where('category_id', $id)->get(); //ProductResource::collection(
+        return Products::where('category_id', $id)->orderBy('sort')->get(); //ProductResource::collection(
     }
 }

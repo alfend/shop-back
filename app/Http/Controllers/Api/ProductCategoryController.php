@@ -12,6 +12,6 @@ class ProductCategoryController extends Controller
 {
     public function index()
     {
-        return ProductCategories::all(); //ProductCategoryResource::collection(
+        return ProductCategories::orderBy('sort')->get(); //ProductCategoryResource::collection(
     }
 }
