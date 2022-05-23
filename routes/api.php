@@ -12,4 +12,7 @@ Route::group(['middleware' => 'api',], function () {
     Route::get('/product-categories/{id}', [ProductController::class, 'byCategory']);
     Route::get('/categories', [ProductCategoryController::class, 'index']);
     Route::get('/home', [HomeController::class, 'index']);
+    Route::resource('catalogs', 'Api\CatalogController');
+    Route::get('banners', 'Api\BannerController@imageBanners');
+    Route::get('banners-v2', 'Api\BannerController@bannersMobile');
 });
