@@ -20,7 +20,7 @@ class ProductCategoryResource extends JsonResource
             'parent_category_id' => $this->parent_category_id,
             'title' => $this->title,
             'slug' => $this->slug,
-            'image' => $this->image ? 'http://svalka-back.im56.ru/'.$this->image : null,
+            'image' => $this->image ? 'http://backend.im56.ru/'.$this->image : null,
             'sort' => $this->sort,
         ];
     }

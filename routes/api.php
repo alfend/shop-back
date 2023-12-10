@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductCategoryController;
 use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\CartController;
 
 Route::group(['middleware' => 'api',], function () {
     Route::get('/products', [ProductController::class, 'index']);
@@ -16,4 +17,6 @@ Route::group(['middleware' => 'api',], function () {
     Route::apiResource('clients', ClientController::class);
     Route::post('registration', [ClientController::class, 'registration']);
     Route::get('login', [ClientController::class, 'login']);
+
+    Route::apiResource('cart', CartController::class);
 });

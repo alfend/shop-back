@@ -21,7 +21,7 @@ class ProductsCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
@@ -105,6 +105,18 @@ class ProductsCrudController extends CrudController
                     'label' => 'На главной',
                 ],
                 [
+                    'name' => 'count',
+                    'label' => 'Кол-во',
+                ],
+                [
+                    'name' => 'size',
+                    'label' => 'Цвет',
+                ],
+                [
+                    'name' => 'color',
+                    'label' => 'Цвет',
+                ],
+                [
                     'name' => 'sort',
                     'label' => 'Сортировка',
                 ],
@@ -164,6 +176,19 @@ class ProductsCrudController extends CrudController
                 [
                     'name' => 'on_main',
                     'label' => 'На главной',
+                ],
+                [
+                    'name' => 'count',
+                    'label' => 'Кол-во',
+                    'default' => 0,
+                ],
+                [
+                    'name' => 'size',
+                    'label' => 'Цвет',
+                ],
+                [
+                    'name' => 'color',
+                    'label' => 'Цвет',
                 ],
                 [
                     'name' => 'sort',

@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * @group Users
  */
-class ClientController extends AbstractUserController
+class ClientController extends AbstractCrudController
 {
     public function __construct()
     {

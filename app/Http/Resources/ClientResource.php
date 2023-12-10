@@ -2,7 +2,9 @@
 
 namespace App\Http\Resources;
 
-class ClientResource extends UserResource
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class ClientResource extends JsonResource
 {
     public function toArray($request)
     {

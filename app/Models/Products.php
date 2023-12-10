@@ -38,8 +38,10 @@ class Products extends Model
         'type',
         'image',
         'sort',
+        'count',
+        'size',
+        'color',
     ];
-
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
