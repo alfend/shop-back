@@ -18,6 +18,8 @@ class Products extends Model
     */
 
     protected $table = 'products';
+    protected $appends = array('show_cart');
+
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     //protected $guarded = ['id'];
@@ -62,6 +64,11 @@ class Products extends Model
             $public_destination_path = \Str::replaceFirst('public/', '', $destination_path);
             $this->attributes[$attribute_name] = 'storage/'.$public_destination_path.'/'.$filename;
         }
+    }
+
+    public function getShowCartAttribute()
+    {
+        return false;
     }
 
     public function getImagePathAttribute()
