@@ -9,6 +9,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegistrationRequest;
 use App\Http\Resources\CartResource;
 use App\Models\Cart;
+use App\Models\Client;
 use App\Models\Products;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -65,6 +66,28 @@ class CartController extends AbstractCrudController
         $cart->delete();
     }
     */
+
+    public static function getProgress()
+    {
+        $carts = Cart::all();
+        $cartsUser = Cart::groupBy('user_id')->get('user_id');
+        $cartsSum = Cart::sum('sum');
+        $carts1000 = Cart::where('sum','>=',1000)->get();
+        $products = Products::all();
+        $products0 = Products::where('count','=',0)->get();
+        $users = Client::all();
+
+        return [
+            'countCart' => $carts->count(),
+            'cartsSum' => (int)($cartsSum),
+            'carts1000' => $carts1000->count(),
+            'countProduct' => $products->count(),
+            'countProduct0' => $products0->count(),
+            'countUser' => $users->count(),
+            'cartsUser' => $cartsUser->count()
+        ];
+    }
+
     protected function createListQuery(ListRequest $request): Builder
     {
         return Cart::query();

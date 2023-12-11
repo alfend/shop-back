@@ -10,6 +10,7 @@ use App\Http\Requests\RegistrationRequest;
 use App\Http\Resources\ClientResource;
 use App\Models\Client;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
 
 /**
  * @group Users
@@ -24,9 +25,9 @@ class ClientController extends AbstractCrudController
      * @apiResourceCollection App\Http\Resources\ClientResource
      * @apiResourceModel App\Models\Client
      */
-    public function index(ListRequest $request)
+    public function index(Request $request)
     {
-        return ClientResource::collection($this->executeListQuery($request));
+        return ClientResource::collection(Client::all());
     }
 
     /**

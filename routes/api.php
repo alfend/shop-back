@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductCategoryController;
 use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\CartController;
 
 Route::group(['middleware' => 'api',], function () {
@@ -19,4 +20,6 @@ Route::group(['middleware' => 'api',], function () {
     Route::get('login', [ClientController::class, 'login']);
 
     Route::apiResource('cart', CartController::class);
+
+    Route::get('/progress', [CartController::class, 'getProgress']);
 });
